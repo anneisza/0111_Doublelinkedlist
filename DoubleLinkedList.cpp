@@ -62,10 +62,17 @@ public:
         //insert in between node
         //Step 8: Locate psition for insertion
         Node *current = START;
-        while (current->next != NULL && current ->next->noMhs < nim)
+        while (current->next != NULL && current->next->noMhs < nim)
         {
-            /* code */
+            current = current->next;
         }
+
+        if (current->next != NULL && nim == current->next->noMhs)
+        {
+            cout <<"\nDuplicate roll numbers not allowed"<< endl;
+            return;
+        }
+        
         
             
           
