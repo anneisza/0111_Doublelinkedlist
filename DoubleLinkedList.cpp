@@ -41,9 +41,9 @@ public:
             {
                 cout <<"\nDuplicated number not allowed"<<endl;
                 return;
-            
+            }
             //Step 4: newNode.next = START
-              newNode->next = START;
+            newNode->next = START;
               
             //Step 5: START.prev = newNode(if START exists)
             if (START != NULL)
@@ -55,33 +55,29 @@ public:
             //Step 7: START = newNode
             START = newNode;
             return;
-            
-            }
-
-
-            //insert in between node
-            //Step 8: Locate psition for insertion
-            Node *current = START;
-            while (current->next != NULL && current->next->noMhs < nim)
-            {
-                current = current->next;
-            }
-
-            if (current->next != NULL && nim == current->next->noMhs)
-            {
-                cout <<"\nDuplicate roll numbers not allowed"<< endl;
-                return;
-            }
-
-            //Step 9: Insert between current and current->next
-            newNode->next = current->next; // Step 9a : newNode.next = current.next
-            newNode->prev = current;       // Step 9b : newNode.prev = current
-
-            //insert last node
-            if (current->next != NULL)
-            current->next->prev=newNode; //Step 9c: current.next.prev
-            current->next=newNode; //Step 9d: current.next = newNode
         }
+        //insert in between node
+        //Step 8: Locate psition for insertion
+        Node *current = START;
+        while (current->next != NULL && current->next->noMhs < nim)
+        {
+            current = current->next;
+        }
+
+        if (current->next != NULL && nim == current->next->noMhs)
+        {
+            cout <<"\nDuplicate roll numbers not allowed"<< endl;
+            return;
+        }
+
+        //Step 9: Insert between current and current->next
+        newNode->next = current->next; // Step 9a : newNode.next = current.next
+        newNode->prev = current;       // Step 9b : newNode.prev = current
+
+        //insert last node
+        if (current->next != NULL)
+        current->next->prev=newNode; //Step 9c: current.next.prev
+        current->next=newNode; //Step 9d: current.next = newNode
     }
 
     void hapus()
@@ -131,10 +127,7 @@ public:
 
         //Step 5: Delete the node
         delete current;
-        cout <<"Record with roll number"<<rollNo<<"deleted"<<endl;
-        
-        
-        
+        cout <<"Record with roll number"<<rollNo<<"deleted"<<endl;  
     }
 
 };
