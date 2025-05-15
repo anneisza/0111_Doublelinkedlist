@@ -11,6 +11,9 @@ public:
 
 };
 
-class DoubleLinkedList{
+class DoubleLinkedList
+{
+private:
+    Node *START;
 
 };
